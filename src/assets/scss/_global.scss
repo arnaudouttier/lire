@@ -1,0 +1,25 @@
+@import 'variables.scss';
+
+// Global
+
+// 1rem = 10px
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 2rem;
+    font-family: $primary_font;   
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
