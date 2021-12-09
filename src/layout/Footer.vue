@@ -15,4 +15,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3.2rem 0;
+  border-top: 1px solid #eee;
+  font-size: 1.4rem;
+}
+</style>

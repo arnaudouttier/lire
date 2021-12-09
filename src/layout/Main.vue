@@ -15,4 +15,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.site-main {
+  width: 90%;
+  margin: 0 auto 6rem auto;
+}
+</style>

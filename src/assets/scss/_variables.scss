@@ -1,6 +1,10 @@
-@import 'fonts.scss';   
+@import 'fonts.scss';
 
 // Fonts
-$primary_font :  $font_lora ;  
-$primary_font_italic :  $font_lora_italic ; 
-$secondary_font : $font-oswald ; 
+$primary_font : $font_lora;
+$primary_font_italic : $font_lora_italic;
+$secondary_font : $font_coustard;
+$logo_font : $font_UnifrakturMaguntia;
+
+// Colors
+$primary_color : #444;
