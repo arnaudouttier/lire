@@ -2,7 +2,15 @@
   <article class="post" v-for="post in posts" v-bind:key="post.id">
     <div class="post-header">
       <h3 class="post-header-title">{{ post.title }}</h3>
-      <h5 class="post-header-meta">{{ post.meta }}</h5>
+      <div class="post-header-meta">
+        <p>
+          posted in <span class="meta meta-category">{{ post.category }}</span
+          >on<span class="meta meta-date">{{ post.date }}</span> by<span
+            class="meta meta-author"
+            >{{ post.author }}</span
+          >
+        </p>
+      </div>
       <img :src="post.image" alt="" />
     </div>
     <div class="post-content">
@@ -26,19 +34,32 @@ export default {
           id: 1,
           image: require('../assets/images/blog-01-500x182.jpg'),
           title: 'The Necessity of Silence',
-          meta: 'November 23, 2016 | 1 min read',
+          category: 'Ville',
+          date: 'February 5, 2013',
+          author: 'Louis',
           content:
             'This is an interview book of world film composers. Silence, which indicates the space without sound, its existential meaning is just equivalent to the technique of “leaving blank” in Chinese painting. From nothing comes from nothing, “leaving blank” doesn’t mean empty but roots in the essence of everything.'
         },
         {
           id: 2,
           title: 'Web Design is 95% Typography',
-          meta: 'November 19, 2016 | 1 min read',
+          category: 'Web',
+          date: 'February 2, 2013',
+          author: 'Arnaud',
           content:
             'Kubrick does not have one single rigid role: it is not only a bookstore but also a café and a publisher. 3 versions of shop card are thus created for Kubrick with same set of keywords highlighted but varied in description, to tell its diversity and richness'
+        },
+        {
+          id: 2,
+          title: 'HTML5 and SEO',
+          category: 'Bar',
+          date: 'February 1, 2013',
+          author: 'Victor',
+          content:
+            'Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu.'
         }
       ],
-      postButton: 'Read more'
+      postButton: 'Continue reading'
     }
   }
 }
@@ -47,7 +68,7 @@ export default {
 <style scoped lang="scss">
 .post {
   text-align: center;
-  padding: 1.6rem 0;
+  margin-bottom: 6.4rem;
 }
 .post-header-title {
   font-size: 2.1rem;
@@ -56,7 +77,7 @@ export default {
   display: none;
 }
 .post-content-text {
-  padding: 0.8rem 0;
+  margin-bottom: 3.2rem;
   font-size: 1.6rem;
   text-align: justify;
 }
@@ -68,5 +89,29 @@ export default {
   border-bottom: 1px dotted #ccc;
   letter-spacing: 2px;
   padding: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .post {
+    margin-bottom: 8rem;
+  }
+  .post-header-title {
+    font-size: 3rem;
+  }
+
+  .post-header-meta {
+    display: block;
+    padding: 1.6rem 0;
+    color: #aaa;
+    font-weight: 400;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+
+    .meta {
+      margin: 0 0.5rem;
+      color: #333;
+      border-bottom: 1px dotted #ccc;
+    }
+  }
 }
 </style>

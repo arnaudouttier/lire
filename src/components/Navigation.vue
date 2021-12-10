@@ -1,19 +1,32 @@
 <template>
-  <nav class="site-navigation">
+  <nav class="nav site-navigation">
     <ul>
-      <li>
-        <a href="#" @click="activeMenu">MENU</a>
-      </li>
-    </ul>
-    <ul class="mobile-navigation" v-bind:class="{ activeMenu: isActiveMenu }">
-      <li>
-        <a href="#" @click="activeMenu">ABOUT</a>
+      <li class="active-link">
+        <a href="">Accueil</a>
       </li>
       <li>
-        <a href="#" @click="activeMenu">CONTACT</a>
+        <a href="">About</a>
+      </li>
+      <li>
+        <a href="">Contact</a>
       </li>
     </ul>
   </nav>
+  <div class="nav site-nav-mobile">
+    <button class="btn">
+      <a href="#" @click="activeMenu">MENU</a>
+    </button>
+    <nav class="nav-mobile" v-bind:class="{ activeMenu: isActiveMenu }">
+      <ul>
+        <li>
+          <a href="#" @click="activeMenu">About</a>
+        </li>
+        <li>
+          <a href="#" @click="activeMenu">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -33,27 +46,55 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.site-navigation {
+@import './src/assets/scss/variables.scss';
+
+.nav {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
 
   li {
-    margin: 1.6px;
+    margin: 0.8rem 0;
   }
+}
 
-  a {
-    font-weight: 700;
-    font-size: 14px;
+.site-navigation {
+  display: none;
+}
+
+.nav-mobile {
+  transition: all 0.4s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.9s ease;
+
+  &.activeMenu {
+    max-height: 400px;
   }
-  .mobile-navigation {
-    transition: all 0.4s ease-in-out;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+}
 
-    &.activeMenu {
-      max-height: 400px;
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .nav {
+    font-size: 1.6rem;
+  }
+  .site-nav-mobile {
+    display: none;
+  }
+  .site-navigation {
+    display: block;
+
+    ul {
+      display: flex;
+      justify-content: center;
+    }
+    li:not(:first-child) {
+      margin-left: 2rem;
+    }
+    .active-link {
+      color: $active_links;
     }
   }
 }

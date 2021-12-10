@@ -23,4 +23,17 @@ export default {
 
 <style lang="scss">
 @import './src/assets/scss/style.scss';
+
+.site {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .site {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
 </style>

@@ -24,12 +24,18 @@ export default {
 <style lang="scss">
 .site-header {
   text-align: center;
-  width: 90%;
-  margin: 0 auto;
   padding: 3.2rem 0;
+  margin-bottom: 3.2rem;
 }
 .site-logo,
 .site-description {
   margin-bottom: 3.2rem;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .site-header {
+    padding: 6.4rem 0;
+  }
 }
 </style>

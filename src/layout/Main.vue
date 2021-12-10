@@ -17,7 +17,7 @@ export default {
 
 <style scoped lang="scss">
 .site-main {
-  width: 90%;
-  margin: 0 auto 6rem auto;
+  max-width: 780px;
+  margin: 0 auto;
 }
 </style>
