@@ -87,10 +87,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 .social-navigation {
   a {
-    margin-right: 16px;
+    margin-right: 1.6rem;
     transition: transform 0.4s ease;
     display: inline-block;
     &:hover {
@@ -103,11 +102,23 @@ svg {
   height: 18px;
 }
 
-.site-year{
-  line-height: 0;
-
-  p{
+.site-year {
+  p {
     margin: 0.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .social-navigation {
+    padding-top: 7px;
+  }
+  .site-year {
+    p {
+      &::before {
+        content: ' | ';
+        margin-right: 1.6rem;
+      }
+    }
   }
 }
 </style>

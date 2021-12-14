@@ -9,7 +9,7 @@ export default {
   name: 'SiteDescription',
   data () {
     return {
-      siteDescription: 'Blo minimal orienté lecture'
+      siteDescription: '...Blog minimal orienté lecture'
     }
   }
 }

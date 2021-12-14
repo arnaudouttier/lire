@@ -1,41 +1,39 @@
 <template>
-  <article class="post" v-for="post in posts" v-bind:key="post.id">
-    <div class="post-header">
-      <h3 class="post-header-title">{{ post.title }}</h3>
-      <div class="post-header-meta">
-        <p>
-          posted in <span class="meta meta-category">{{ post.category }}</span
-          >on<span class="meta meta-date">{{ post.date }}</span> by<span
-            class="meta meta-author"
-            >{{ post.author }}</span
-          >
-        </p>
+  <main role="main" class="site-main">
+    <article class="post" v-for="post in filterSinglePost" v-bind:key="post.id">
+      <div class="post-header">
+        <h3 class="post-header-title">{{ post.title }}</h3>
+        <div class="post-header-meta">
+          <p>
+            posted in <span class="meta meta-category">{{ post.category }}</span
+            >on<span class="meta meta-date">{{ post.date }}</span> by<span
+              class="meta meta-author"
+              >{{ post.author }}</span
+            >
+          </p>
+        </div>
+        <img :src="post.image" alt="" />
       </div>
-      <img :src="post.image" :alt="post.altImage" />
-    </div>
-    <div class="post-content">
-      <div class="post-content-text">
-        <p>{{ post.content }}</p>
+      <div class="post-content">
+        <div class="post-content-text">
+          <p>{{ post.content }}</p>
+        </div>
       </div>
-      <div class="post-content-link">
-        <router-link :to="{ name: 'Post', params: { name: post.postTag } }">{{
-          postButton
-        }}</router-link>
-      </div>
-    </div>
-  </article>
+    </article>
+  </main>
 </template>
 
 <script>
+import { useRoute } from 'vue-router'
+
 export default {
-  name: 'Post',
+  name: 'Single',
   data () {
     return {
       posts: [
         {
           id: 1,
           image: require('../assets/images/blog-01-500x182.jpg'),
-          altImage: 'robot picture',
           title: 'The Necessity of Silence',
           postTag: 'the-necessity-of-silence',
           category: 'Ville',
@@ -65,59 +63,19 @@ export default {
             'Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu.'
         }
       ],
-      postButton: 'Continue reading'
+      currentIdPost: ''
+    }
+  },
+  mounted () {
+    const route = useRoute()
+    this.currentIdPost = route.params.name
+  },
+  computed: {
+    filterSinglePost () {
+      return this.posts.filter((post) => post.postTag === this.currentIdPost)
     }
   }
 }
 </script>
 
-<style lang="scss">
-.post {
-  text-align: center;
-  margin-bottom: 6.4rem;
-}
-.post-header-title {
-  font-size: 2.1rem;
-}
-.post-header-meta {
-  display: none;
-}
-.post-content-text {
-  margin-bottom: 3.2rem;
-  font-size: 1.6rem;
-  text-align: justify;
-}
-.post-content-link {
-  max-width: 250px;
-  margin: 0 auto;
-  font-weight: 400;
-  font-size: 1.4rem;
-  border-bottom: 1px dotted #ccc;
-  letter-spacing: 2px;
-  padding: 0.6rem;
-}
-
-@media (min-width: 768px) {
-  .post {
-    margin-bottom: 8rem;
-  }
-  .post-header-title {
-    font-size: 3rem;
-  }
-
-  .post-header-meta {
-    display: block;
-    padding: 1.6rem 0;
-    color: #aaa;
-    font-weight: 400;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-
-    .meta {
-      margin: 0 0.5rem;
-      color: #333;
-      border-bottom: 1px dotted #ccc;
-    }
-  }
-}
-</style>
+<style lang="scss"></style>

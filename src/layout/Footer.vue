@@ -24,4 +24,9 @@ export default {
   font-size: 1.4rem;
 }
 
+@media (min-width: 768px) {
+  .site-footer {
+    justify-content: center;
+  }
+}
 </style>

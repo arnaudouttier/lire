@@ -1,14 +1,11 @@
 <template>
   <nav class="nav site-navigation">
     <ul>
-      <li class="active-link">
-        <a href="">Accueil</a>
+      <li>
+        <router-link to="/">Accueil</router-link>
       </li>
       <li>
-        <a href="">About</a>
-      </li>
-      <li>
-        <a href="">Contact</a>
+        <router-link to="/about">About</router-link>
       </li>
     </ul>
   </nav>
@@ -19,10 +16,10 @@
     <nav class="nav-mobile" v-bind:class="{ activeMenu: isActiveMenu }">
       <ul>
         <li>
-          <a href="#" @click="activeMenu">About</a>
+          <router-link to="/">Accueil</router-link>
         </li>
         <li>
-          <a href="#" @click="activeMenu">Contact</a>
+          <router-link to="/about">About</router-link>
         </li>
       </ul>
     </nav>
@@ -40,6 +37,10 @@ export default {
   methods: {
     activeMenu () {
       this.isActiveMenu = !this.isActiveMenu
+    },
+    markActiveMenuItem () {
+      const path = window.location.pathname
+      console.log(path)
     }
   }
 }
@@ -57,6 +58,11 @@ export default {
 
   li {
     margin: 0.8rem 0;
+
+    .router-link-active,
+    .router-link-exact-active {
+      color: $active_links;
+    }
   }
 }
 
@@ -92,9 +98,6 @@ export default {
     }
     li:not(:first-child) {
       margin-left: 2rem;
-    }
-    .active-link {
-      color: $active_links;
     }
   }
 }

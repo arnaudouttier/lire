@@ -1,21 +1,19 @@
 <template>
   <div class="site">
     <Header />
-    <Main />
+    <router-view />
     <Footer />
   </div>
 </template>
 
 <script>
 import Header from './layout/Header.vue'
-import Main from './layout/Main.vue'
 import Footer from './layout/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main,
     Footer
   }
 }
@@ -23,12 +21,10 @@ export default {
 
 <style lang="scss">
 @import './src/assets/scss/style.scss';
-
 .site {
   max-width: 90%;
   margin: 0 auto;
 }
-
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .site {
