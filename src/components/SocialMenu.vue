@@ -88,6 +88,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .social-navigation {
+  padding-top: 7px;
+
   a {
     margin-right: 1.6rem;
     transition: transform 0.4s ease;
@@ -109,9 +111,6 @@ svg {
 }
 
 @media (min-width: 768px) {
-  .social-navigation {
-    padding-top: 7px;
-  }
   .site-year {
     p {
       &::before {

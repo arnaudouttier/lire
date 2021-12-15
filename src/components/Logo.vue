@@ -1,7 +1,7 @@
 <template>
   <div class="site-logo">
     <h1>
-      <a href="#">{{ logoText }}</a>
+       <router-link to="/">Lire</router-link>
     </h1>
   </div>
 </template>
@@ -27,6 +27,10 @@ h1 {
 
 a {
   border-bottom: 1px dotted #ccc;
+
+  &:hover{
+    background: #fff;
+  }
 }
 
 // Medium devices (tablets, 768px and up)

@@ -74,7 +74,6 @@ export default {
   transition: all 0.4s ease-in-out;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.9s ease;
 
   &.activeMenu {
     max-height: 400px;

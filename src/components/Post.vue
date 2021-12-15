@@ -72,6 +72,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../assets/scss/variables.scss';
+
 .post {
   text-align: center;
   margin-bottom: 6.4rem;
@@ -95,6 +97,13 @@ export default {
   border-bottom: 1px dotted #ccc;
   letter-spacing: 2px;
   padding: 0.6rem;
+
+  a {
+    &::after {
+      content: '→';
+      margin-left: 0.8rem;
+    }
+  }
 }
 
 @media (min-width: 768px) {
@@ -117,6 +126,12 @@ export default {
       margin: 0 0.5rem;
       color: #333;
       border-bottom: 1px dotted #ccc;
+
+      &:hover {
+        text-shadow: none;
+        color: $secondary_color;
+        background: $selection_bg_color;
+      }
     }
   }
 }
