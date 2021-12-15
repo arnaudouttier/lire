@@ -88,7 +88,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .social-navigation {
-  padding-top: 7px;
+  padding-top: 0.8rem;
 
   a {
     margin-right: 1.6rem;

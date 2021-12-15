@@ -12,7 +12,11 @@
             >
           </p>
         </div>
-        <img :src="post.image" alt="" />
+        <img
+          v-if="post.featured_image"
+          :src="post.featured_image"
+          :alt="post.altImage"
+        />
       </div>
       <div class="post-content">
         <div class="post-content-text">
@@ -33,9 +37,10 @@ export default {
       posts: [
         {
           id: 1,
-          image: require('../assets/images/blog-01-500x182.jpg'),
+          featured_image: require('../assets/images/blog-01-500x182.jpg'),
+          altImage: 'robot picture',
           title: 'The Necessity of Silence',
-          postTag: 'the-necessity-of-silence',
+          postSlug: 'the-necessity-of-silence',
           category: 'Ville',
           date: 'February 5, 2013',
           author: 'Louis',
@@ -45,7 +50,7 @@ export default {
         {
           id: 2,
           title: 'Web Design is 95% Typography',
-          postTag: 'web-design-is-95%-typography',
+          postSlug: 'web-design-is-typography',
           category: 'Web',
           date: 'February 2, 2013',
           author: 'Arnaud',
@@ -55,7 +60,7 @@ export default {
         {
           id: 3,
           title: 'HTML5 and SEO',
-          postTag: 'html-and-seo',
+          postSlug: 'html-and-seo',
           category: 'Bar',
           date: 'February 1, 2013',
           author: 'Victor',
@@ -63,16 +68,16 @@ export default {
             'Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu.'
         }
       ],
-      currentIdPost: ''
+      currentPost: ''
     }
   },
   mounted () {
     const route = useRoute()
-    this.currentIdPost = route.params.name
+    this.currentPost = route.params.slug
   },
   computed: {
     filterSinglePost () {
-      return this.posts.filter((post) => post.postTag === this.currentIdPost)
+      return this.posts.filter((post) => post.postSlug === this.currentPost)
     }
   }
 }

@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/post/:name',
+    path: '/post/:slug',
     name: 'Post',
     component: Single
   },

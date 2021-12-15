@@ -37,10 +37,6 @@ export default {
   methods: {
     activeMenu () {
       this.isActiveMenu = !this.isActiveMenu
-    },
-    markActiveMenuItem () {
-      const path = window.location.pathname
-      console.log(path)
     }
   }
 }

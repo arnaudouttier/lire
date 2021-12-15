@@ -11,14 +11,19 @@
           >
         </p>
       </div>
-      <img :src="post.image" :alt="post.altImage" />
+      <img
+        class="featured_image"
+        v-if="post.featured_image"
+        :src="post.featured_image"
+        :alt="post.altfeatured_image"
+      />
     </div>
     <div class="post-content">
       <div class="post-content-text">
         <p>{{ post.content }}</p>
       </div>
       <div class="post-content-link">
-        <router-link :to="{ name: 'Post', params: { name: post.postTag } }">{{
+        <router-link :to="{ name: 'Post', params: { slug: post.postSlug } }">{{
           postButton
         }}</router-link>
       </div>
@@ -29,15 +34,16 @@
 <script>
 export default {
   name: 'Post',
+  props: ['post'],
   data () {
     return {
       posts: [
         {
           id: 1,
-          image: require('../assets/images/blog-01-500x182.jpg'),
+          featured_image: require('../assets/images/blog-01-500x182.jpg'),
           altImage: 'robot picture',
           title: 'The Necessity of Silence',
-          postTag: 'the-necessity-of-silence',
+          postSlug: 'the-necessity-of-silence',
           category: 'Ville',
           date: 'February 5, 2013',
           author: 'Louis',
@@ -47,7 +53,7 @@ export default {
         {
           id: 2,
           title: 'Web Design is 95% Typography',
-          postTag: 'web-design-is-95%-typography',
+          postSlug: 'web-design-is-typography',
           category: 'Web',
           date: 'February 2, 2013',
           author: 'Arnaud',
@@ -57,7 +63,7 @@ export default {
         {
           id: 3,
           title: 'HTML5 and SEO',
-          postTag: 'html-and-seo',
+          postSlug: 'html-and-seo',
           category: 'Bar',
           date: 'February 1, 2013',
           author: 'Victor',
@@ -80,10 +86,12 @@ export default {
 }
 .post-header-title {
   font-size: 2.1rem;
+  margin-bottom: 3.2rem;
 }
 .post-header-meta {
   display: none;
 }
+
 .post-content-text {
   margin-bottom: 3.2rem;
   font-size: 1.6rem;
@@ -112,6 +120,7 @@ export default {
   }
   .post-header-title {
     font-size: 3rem;
+    margin: 0;
   }
 
   .post-header-meta {
