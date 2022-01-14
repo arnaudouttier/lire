@@ -49,11 +49,11 @@ export default {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   padding: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
 
   li {
-    margin: 0.8rem 0;
+    margin: 2rem 0;
 
     .router-link-active,
     .router-link-exact-active {
@@ -79,7 +79,7 @@ export default {
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .nav {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
   .site-nav-mobile {
     display: none;

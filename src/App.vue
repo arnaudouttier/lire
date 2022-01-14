@@ -1,7 +1,9 @@
 <template>
   <div class="site">
     <Header />
-    <router-view />
+    <main class="site_main">
+      <router-view :key="this.$route.path" />
+    </main>
     <Footer />
   </div>
 </template>
@@ -20,12 +22,17 @@ export default {
 </script>
 
 <style lang="scss">
-@import './src/assets/scss/style.scss';
+@import "./src/assets/scss/style.scss";
 .site {
   max-width: 90%;
   margin: 0 auto;
 }
-// Medium devices (tablets, 768px and up)
+
+.site_main {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 @media (min-width: 768px) {
   .site {
     max-width: 80%;

@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/pages/Home.vue'
-import Single from '@/pages/Single.vue'
-import About from '@/pages/About.vue'
-import NotFound from '@/pages/NotFound.vue'
 
 const routes = [
   {
@@ -11,19 +8,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/post/:slug',
+    path: '/post/:id/:slug',
     name: 'Post',
-    component: Single
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/Single.vue')
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue')
   },
   {
-    path: '/:catchAll(.*)',
+    path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/NotFound.vue')
   }
 ]
 

@@ -20,13 +20,6 @@ a {
     color: inherit;
     text-decoration: none;
     cursor: pointer;
-
-    &:hover,
-    :active {
-        text-shadow: none;
-        color: $secondary_color;
-        background: $selection_bg_color;
-    }
 }
 
 ul {

@@ -29,7 +29,7 @@ export default {
 }
 .site-logo,
 .site-description {
-  margin-bottom: 3.2rem;
+  margin-bottom: 6.2rem;
 }
 
 // Medium devices (tablets, 768px and up)

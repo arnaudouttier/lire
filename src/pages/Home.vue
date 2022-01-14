@@ -1,23 +1,24 @@
 <template>
-  <main role="main" class="site-main">
-    <Post />
-  </main>
+  <section class="home">
+    <Posts v-for="post in posts" :key="post.id" :post="post" />
+  </section>
 </template>
 
 <script>
-import Post from '../components/Post.vue'
+import Posts from '../components/Posts.vue'
 
 export default {
   name: 'Home',
   components: {
-    Post
+    Posts
+  },
+  data () {
+    return {
+      posts: this.$store.state.posts
+    }
   }
 }
 </script>
 
 <style  lang="scss">
-.site-main {
-  max-width: 780px;
-  margin: 0 auto;
-}
 </style>
