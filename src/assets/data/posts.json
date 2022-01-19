@@ -1,31 +1,42 @@
-[
-  {
-    "id": 1,
-    "featured_image": "blog-01-500x182.jpg",
-    "altImage": "robot picture",
-    "title": "The Necessity of Silence",
-    "slug": "the-necessity-of-silence",
-    "category": "Ville",
-    "date": "February 5 2013",
-    "author": "Louis",
-    "content": "This is an interview book of world film composers. Silence, which indicates the space without sound, its existential meaning is just equivalent to the technique of “leaving blank” in Chinese painting. From nothing comes from nothing, “leaving blank” doesn’t mean empty but roots in the essence of everything."
-  },
-  {
-    "id": 2,
-    "title": "Web Design is 95% Typography",
-    "slug": "web-design-is-typography",
-    "category": "Web",
-    "date": "February 2, 2013",
-    "author": "Arnaud",
-    "content": "Kubrick does not have one single rigid role: it is not only a bookstore but also a café and a publisher. 3 versions of shop card are thus created for Kubrick with same set of keywords highlighted but varied in description, to tell its diversity and richness"
-  },
-  {
-    "id": 3,
-    "title": "HTML5 and SEO",
-    "slug": "html-and-seo",
-    "category": "Bar",
-    "date": "February 1 2013",
-    "author": "Victor",
-    "content": "Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-  }
-]
+{
+  "posts": [
+    {
+      "id": 1,
+      "featured_image": "blog-01-500x182.jpg",
+      "altImage": "robot picture",
+      "title": "The Necessity of Silence",
+      "slug": "the-necessity-of-silence",
+      "category": "ville",
+      "date": "February 5 2013",
+      "author": "Louis",
+      "content": "This is an interview book of world film composers. Silence, which indicates the space without sound, its existential meaning is just equivalent to the technique of “leaving blank” in Chinese painting. From nothing comes from nothing, “leaving blank” doesn’t mean empty but roots in the essence of everything."
+    },
+    {
+      "id": 2,
+      "title": "Web Design is 95% Typography",
+      "slug": "web-design-is-typography",
+      "category": "Web",
+      "date": "February 2, 2013",
+      "author": "Arnaud",
+      "content": "Kubrick does not have one single rigid role: it is not only a bookstore but also a café and a publisher. 3 versions of shop card are thus created for Kubrick with same set of keywords highlighted but varied in description, to tell its diversity and richness"
+    },
+    {
+      "id": 3,
+      "title": "HTML5 and SEO",
+      "slug": "html-and-seo",
+      "category": "ville",
+      "date": "February 1 2013",
+      "author": "Victor",
+      "content": "Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
+    },
+    {
+      "id": 4,
+      "title": "Le monde de l'autre",
+      "slug": "le-monde-de-autre",
+      "category": "ville",
+      "date": "February 1 2013",
+      "author": "Emma",
+      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
+    }
+  ]
+}

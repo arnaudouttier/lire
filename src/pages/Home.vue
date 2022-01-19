@@ -1,16 +1,16 @@
 <template>
   <section class="home">
-    <Posts v-for="post in posts" :key="post.id" :post="post" />
+    <Post v-for="post in posts" :key="post.id" :post="post" />
   </section>
 </template>
 
 <script>
-import Posts from '../components/Posts.vue'
+import Post from '../components/Post.vue'
 
 export default {
   name: 'Home',
   components: {
-    Posts
+    Post
   },
   data () {
     return {

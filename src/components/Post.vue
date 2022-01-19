@@ -3,7 +3,10 @@
     <div class="post_header">
       <h3 class="post_title">
         <router-link
-          :to="{ name: 'Post', params: { id: post.id, slug: post.slug } }"
+          :to="{
+            name: 'Single',
+            params: { category: post.category, id: post.id, slug: post.slug },
+          }"
           >{{ post.title }}
         </router-link>
       </h3>
@@ -28,7 +31,10 @@
       </div>
       <div class="post_content_link">
         <router-link
-          :to="{ name: 'Post', params: { id: post.id, slug: post.slug } }"
+          :to="{
+            name: 'Single',
+            params: { category: post.category, id: post.id, slug: post.slug },
+          }"
           >{{ postBtn }}
         </router-link>
       </div>
@@ -39,22 +45,22 @@
 <script>
 export default {
   name: 'Post',
+  data () {
+    return {
+      postBtn: 'Contuning reading'
+    }
+  },
   props: {
     post: {
       type: Object,
       required: true
-    }
-  },
-  data () {
-    return {
-      postBtn: 'Contuning reading'
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import "../assets/scss/variables.scss";
+@import '../assets/scss/variables.scss';
 
 .post {
   text-align: center;
@@ -84,7 +90,7 @@ export default {
 
   a {
     &::after {
-      content: "→";
+      content: '→';
       margin-left: 0.8rem;
     }
   }

@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Header from './layout/Header.vue'
-import Footer from './layout/Footer.vue'
+import Header from './commons/Header.vue'
+import Footer from './commons/Footer.vue'
 
 export default {
   name: 'App',
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./src/assets/scss/style.scss";
+@import './src/assets/scss/style.scss';
 .site {
   max-width: 90%;
   margin: 0 auto;

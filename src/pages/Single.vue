@@ -1,52 +1,41 @@
 <template>
   <section class="single">
     <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
-    <section class="related_posts">
-      <h4>Related Posts</h4>
-      <div class="related_posts_content">
-        <router-link
-          v-for="post in relatedPost"
-          :key="post.id"
-          :to="{ name: 'Post', params: { id: post.id, slug: post.slug } }"
-        >
-          <RelatedPost :post="post" />
-        </router-link>
-      </div>
-    </section>
+    <RelatedPosts />
   </section>
 </template>
 
 <script>
 import SinglePost from '@/components/SinglePost.vue'
-import RelatedPost from '@/components/RelatedPost.vue'
+import RelatedPosts from '@/components/RelatedPosts.vue'
 
 export default {
   name: 'Single',
   components: {
     SinglePost,
-    RelatedPost
+    RelatedPosts
   },
   data () {
     return {
       posts: this.$store.state.posts
     }
   },
+  props: {
+    id: {
+      type: Number,
+      required: true
+    }
+  },
   computed: {
-    getPostSlug () {
-      return this.$route.params.slug
-    },
     singlePost () {
-      return this.posts.filter((post) => post.slug === this.getPostSlug)
-    },
-    relatedPost () {
-      return this.posts.filter((post) => post.slug !== this.getPostSlug)
+      return this.posts.filter((post) => post.id === this.id)
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import "src/assets/scss/style.scss";
+@import 'src/assets/scss/style.scss';
 
 .related_posts {
   margin: 6.4rem 0 12.8rem 0;
@@ -57,7 +46,7 @@ export default {
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       bottom: -3px;
       left: 0;

@@ -8,9 +8,18 @@ const routes = [
     component: Home
   },
   {
-    path: '/post/:id/:slug',
-    name: 'Post',
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/Single.vue')
+    path: '/single/:category/:id/:slug',
+    name: 'Single',
+    component: () => import(/* webpackChunkName: "about" */ '@/pages/Single.vue'),
+    props: route => ({ ...route.params, id: parseInt(route.params.id) }),
+    children: [
+      {
+        path: ':relatedpostSlug',
+        name: 'RelatedPostSow',
+        component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostSow.vue'),
+        props: route => ({ ...route.params, id: parseInt(route.params.id) })
+      }
+    ]
   },
   {
     path: '/about',

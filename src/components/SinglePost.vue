@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Single',
+  name: 'singlePost',
   props: {
     post: {
       type: Object,
