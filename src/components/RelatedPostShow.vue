@@ -1,12 +1,11 @@
 <template>
   <section>
-    <h1>{{ post.title }}</h1>
-    {{ post.id }}
+    <h1>{{ RelatedPost.title }}</h1>
   </section>
 </template>
 <script>
 export default {
-  name: 'RelatedPostSow',
+  name: 'RelatedPostShow',
   data () {
     return {
       posts: this.$store.state.posts
@@ -19,7 +18,7 @@ export default {
     }
   },
   computed: {
-    post () {
+    RelatedPost () {
       return this.posts.find((post) => post.slug === this.relatedpostSlug)
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="site">
+  <div class="site" :class="{ activerid: this.$store.state.toolerid }">
     <Header />
     <main class="site_main">
       <router-view :key="this.$route.path" />
@@ -37,6 +37,21 @@ export default {
   .site {
     max-width: 80%;
     margin: 0 auto;
+
+    &.activerid {
+      max-height: 100vh;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-template-rows: repeat(2, 1fr) auto;
+
+      .site_main {
+        max-width: 100%;
+        overflow: hidden;
+        grid-row: 1/3;
+        position: relative;
+      }
+    }
   }
 }
 </style>

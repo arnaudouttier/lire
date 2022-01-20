@@ -1,22 +1,28 @@
 <template>
-  <header class="site-header">
+  <header
+    class="site-header"
+    :class="{ activerid: this.$store.state.toolerid }"
+  >
     <Logo />
     <SiteDescription />
-    <Navigation />
+    <TheNavigation />
+    <ToggleGrid />
   </header>
 </template>
 
 <script>
+import TheNavigation from './TheNavigation.vue'
 import Logo from '../components/Logo.vue'
-import Navigation from '../components/Navigation.vue'
 import SiteDescription from '../components/SiteDescription.vue'
+import ToggleGrid from '../components/ToggleGrid.vue'
 
 export default {
   name: 'Header',
   components: {
     Logo,
     SiteDescription,
-    Navigation
+    TheNavigation,
+    ToggleGrid
   }
 }
 </script>
@@ -36,6 +42,11 @@ export default {
 @media (min-width: 768px) {
   .site-header {
     padding: 6.4rem 0;
+
+    &activerid {
+      grid-row: 1/2;
+      grid-column: 1/2;
+    }
   }
 }
 </style>

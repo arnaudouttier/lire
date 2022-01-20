@@ -3,11 +3,20 @@
     <div class="post_header">
       <h3 class="post_title">
         <router-link
+          v-if="!this.$store.state.toolerid"
           :to="{
             name: 'Single',
             params: { category: post.category, id: post.id, slug: post.slug },
           }"
           >{{ post.title }}
+        </router-link>
+        <router-link
+          v-if="this.$store.state.toolerid"
+          :to="{
+            name: 'SingleridPost',
+            params: { category: post.category, id: post.id, slug: post.slug },
+          }"
+          >SInelridPost
         </router-link>
       </h3>
       <div class="post_meta">

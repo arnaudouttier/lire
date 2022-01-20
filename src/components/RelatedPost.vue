@@ -3,9 +3,12 @@
     <h4>Related Posts</h4>
     <div class="related_posts_content">
       <router-link
-        v-for="post in relatedPosts"
+        v-for="post in relatedPost"
         :key="post.slug"
-        :to="{ name: 'RelatedPostSow', params: { relatedpostSlug: post.slug } }"
+        :to="{
+          name: 'RelatedPostShow',
+          params: { relatedpostSlug: post.slug },
+        }"
       >
         <article class="related_post">
           <div class="post_header">
@@ -20,7 +23,7 @@
 
 <script>
 export default {
-  name: 'RelatedPosts',
+  name: 'RelatedPost',
   data () {
     return {
       posts: this.$store.state.posts
@@ -33,7 +36,7 @@ export default {
     }
   },
   computed: {
-    relatedPosts () {
+    relatedPost () {
       return this.posts.filter((post) => {
         return (
           post.category === this.$route.params.category && post.id !== this.id

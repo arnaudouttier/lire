@@ -1,5 +1,8 @@
 <template>
-  <footer class="site-footer">
+  <footer
+    class="site-footer"
+    :class="{ activerid: this.$store.state.toolerid }"
+  >
     <SocialMenu />
   </footer>
 </template>
@@ -15,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style  lang="scss">
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -26,7 +29,11 @@ export default {
 
 @media (min-width: 768px) {
   .site-footer {
-    justify-content: center;
+    &.activerid {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      justify-content: center;
+    }
   }
 }
 </style>

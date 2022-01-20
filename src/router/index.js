@@ -5,7 +5,15 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: ':/single/:category/:id/:slug',
+        name: 'SingleridPost',
+        component: () => import(/* webpackChunkName: "about" */ '@/pages/SingleridPost.vue'),
+        props: route => ({ ...route.params, id: parseInt(route.params.id) })
+      }
+    ]
   },
   {
     path: '/single/:category/:id/:slug',
@@ -15,8 +23,8 @@ const routes = [
     children: [
       {
         path: ':relatedpostSlug',
-        name: 'RelatedPostSow',
-        component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostSow.vue'),
+        name: 'RelatedPostShow',
+        component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostShow.vue'),
         props: route => ({ ...route.params, id: parseInt(route.params.id) })
       }
     ]

@@ -1,5 +1,9 @@
 <template>
-  <section class="single">
+  <section
+    class="singleridPost"
+    :class="{ activerid: this.$store.state.toolerid }"
+  >
+    <p>sinle rid post</p>
     <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
     <RelatedPost :id="id" />
     <GoBack />
@@ -39,24 +43,16 @@ export default {
 
 <style lang="scss">
 @import 'src/assets/scss/style.scss';
+.singleridPost {
+  background: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 0;
+  height: 100%;
 
-.related_posts {
-  margin: 6.4rem 0 12.8rem 0;
-
-  h4 {
-    display: inline-block;
-    margin-bottom: 6.4rem;
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background: $primary_color;
-    }
+  &.activerid {
+    max-width: 50%;
   }
 }
 </style>
