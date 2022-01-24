@@ -6,7 +6,9 @@
         v-for="post in relatedPost"
         :key="post.slug"
         :to="{
-          name: 'RelatedPostShow',
+          name: this.$store.state.toolerid
+            ? 'RelatedPostShowrid'
+            : 'RelatedPostShow',
           params: { relatedpostSlug: post.slug },
         }"
       >

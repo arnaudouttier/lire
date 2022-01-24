@@ -8,10 +8,18 @@ const routes = [
     component: Home,
     children: [
       {
-        path: ':/single/:category/:id/:slug',
-        name: 'SingleridPost',
-        component: () => import(/* webpackChunkName: "about" */ '@/pages/SingleridPost.vue'),
-        props: route => ({ ...route.params, id: parseInt(route.params.id) })
+        path: 'single/:category/:id/:slug',
+        name: 'Singlerid',
+        component: () => import(/* webpackChunkName: "about" */ '@/pages/Singlerid.vue'),
+        props: route => ({ ...route.params, id: parseInt(route.params.id) }),
+        children: [
+          {
+            path: ':relatedpostSlug',
+            name: 'RelatedPostShowrid',
+            component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostShowrid.vue'),
+            props: route => ({ ...route.params })
+          }
+        ]
       }
     ]
   },
@@ -25,7 +33,7 @@ const routes = [
         path: ':relatedpostSlug',
         name: 'RelatedPostShow',
         component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostShow.vue'),
-        props: route => ({ ...route.params, id: parseInt(route.params.id) })
+        props: route => ({ ...route.params })
       }
     ]
   },

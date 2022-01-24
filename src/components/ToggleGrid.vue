@@ -1,5 +1,5 @@
 <template>
-  <button class="btn toolerid" @click="tr()">Activer rid</button>
+  <button @click="tr()">Activer</button>
 </template>
 
 <script>

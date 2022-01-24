@@ -1,9 +1,10 @@
 <template>
   <section
-    class="singleridPost"
-    :class="{ activerid: this.$store.state.toolerid }"
+    class="singlerid"
+    :class="{ activerSidebar: this.$store.state.sidebarActive }"
+    v-if="this.$store.state.toolerid"
   >
-    <p>sinle rid post</p>
+    <button @click="sidebarActive()"><span>X</span></button>
     <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
     <RelatedPost :id="id" />
     <GoBack />
@@ -33,6 +34,11 @@ export default {
       required: true
     }
   },
+  methods: {
+    sidebarActive () {
+      this.$store.commit('sidebarActive')
+    }
+  },
   computed: {
     singlePost () {
       return this.posts.filter((post) => post.id === this.id)
@@ -43,15 +49,16 @@ export default {
 
 <style lang="scss">
 @import 'src/assets/scss/style.scss';
-.singleridPost {
+.singlerid {
   background: red;
   position: absolute;
   top: 0;
   right: 0;
   max-width: 0;
   height: 100%;
+  overflow: scroll;
 
-  &.activerid {
+  &.activerSidebar {
     max-width: 50%;
   }
 }

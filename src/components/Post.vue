@@ -1,51 +1,46 @@
 <template>
   <article class="post">
-    <div class="post_header">
-      <h3 class="post_title">
-        <router-link
-          v-if="!this.$store.state.toolerid"
-          :to="{
-            name: 'Single',
-            params: { category: post.category, id: post.id, slug: post.slug },
-          }"
-          >{{ post.title }}
-        </router-link>
-        <router-link
-          v-if="this.$store.state.toolerid"
-          :to="{
-            name: 'SingleridPost',
-            params: { category: post.category, id: post.id, slug: post.slug },
-          }"
-          >SInelridPost
-        </router-link>
-      </h3>
-      <div class="post_meta">
-        <p>
-          posted in <span class="meta">{{ post.category }}</span
-          >on<span class="meta">{{ post.date }}</span> by<span class="meta">{{
-            post.author
-          }}</span>
-        </p>
-      </div>
-      <img
-        class="featured_image"
-        v-if="post.featured_image"
-        :src="require('@/assets/images/' + post.featured_image)"
-        :alt="post.slug"
-      />
-    </div>
     <div class="post_content">
-      <div class="post_content_text">
-        <p>{{ post.content }}</p>
+      <div class="post_header">
+        <h3 class="post_title">
+          <router-link
+            @click="[sidebarActive, rzMasonryItems]"
+            :to="{
+              name: this.$store.state.toolerid ? 'Singlerid' : 'Single',
+              params: { category: post.category, id: post.id, slug: post.slug },
+            }"
+            >{{ post.title }}
+          </router-link>
+        </h3>
+        <div class="post_meta">
+          <p>
+            posted in <span class="meta">{{ post.category }}</span
+            >on<span class="meta">{{ post.date }}</span> by<span class="meta">{{
+              post.author
+            }}</span>
+          </p>
+        </div>
+        <img
+          class="featured_image"
+          v-if="post.featured_image"
+          :src="require('@/assets/images/' + post.featured_image)"
+          :alt="post.slug"
+        />
       </div>
-      <div class="post_content_link">
-        <router-link
-          :to="{
-            name: 'Single',
-            params: { category: post.category, id: post.id, slug: post.slug },
-          }"
-          >{{ postBtn }}
-        </router-link>
+      <div class="post_main">
+        <div class="post_mqin_text">
+          <p>{{ post.content }}</p>
+        </div>
+        <div class="post_main_link">
+          <router-link
+            @click="sidebarActive"
+            :to="{
+              name: this.$store.state.toolerid ? 'Singlerid' : 'Single',
+              params: { category: post.category, id: post.id, slug: post.slug },
+            }"
+            >{{ postBtn }}
+          </router-link>
+        </div>
       </div>
     </div>
   </article>
@@ -64,6 +59,17 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    sidebarActive () {
+      this.$store.commit('sidebarActive')
+    },
+    rzMasonryItems () {
+      this.$emit('resizeMasonryItems')
+    }
+  },
+  updated () {
+    this.rzMasonryItems()
   }
 }
 </script>
@@ -83,12 +89,12 @@ export default {
   display: none;
 }
 
-.post_content_text {
+.post_main_text {
   margin-bottom: 3.2rem;
   font-size: 1.6rem;
   text-align: justify;
 }
-.post_content_link {
+.post_main_link {
   max-width: 250px;
   margin: 0 auto;
   font-weight: 400;
