@@ -2,6 +2,8 @@
   <div class="site" :class="{ activerid: this.$store.state.toolerid }">
     <Header />
     <main class="site_main">
+      toolerid : {{ this.$store.state.toolerid }} activeSidebar :
+      {{ this.$store.state.sidebarActive }}
       <router-view :key="this.$route.path" />
     </main>
     <Footer />

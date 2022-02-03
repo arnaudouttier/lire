@@ -4,7 +4,6 @@
     :class="{ activerid: this.$store.state.toolerid }"
   >
     <Logo />
-    <SiteDescription />
     <TheNavigation />
     <ToggleGrid />
   </header>
@@ -13,14 +12,12 @@
 <script>
 import TheNavigation from './TheNavigation.vue'
 import Logo from '../components/Logo.vue'
-import SiteDescription from '../components/SiteDescription.vue'
 import ToggleGrid from '../components/ToggleGrid.vue'
 
 export default {
   name: 'Header',
   components: {
     Logo,
-    SiteDescription,
     TheNavigation,
     ToggleGrid
   }
@@ -38,7 +35,6 @@ export default {
   margin-bottom: 6.2rem;
 }
 
-// Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .site-header {
     padding: 6.4rem 0;

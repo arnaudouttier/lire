@@ -1,7 +1,7 @@
 <template>
   <div class="site-logo">
     <h1>
-       <router-link to="/">Lire</router-link>
+      <router-link to="/">Lire</router-link>
     </h1>
   </div>
 </template>
@@ -21,22 +21,7 @@ export default {
 @import './src/assets/scss/variables.scss';
 
 h1 {
-  font-family: $logo_font;
-  font-size: 6.4rem;
-}
-
-a {
-  border-bottom: 1px dotted #ccc;
-
-  &:hover{
-    background: #fff;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  h1 {
-    font-size: 9.2rem;
-  }
+  font-family: $primary_font_bold;
+  font-size: 3.2rem;
 }
 </style>

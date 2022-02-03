@@ -2,7 +2,12 @@
   <nav class="nav site-navigation">
     <ul>
       <li>
-        <router-link to="/">Accueil</router-link>
+        <router-link
+          :to="{
+            name: this.$store.state.toolerid ? 'omerid' : 'Home',
+          }"
+          >Accueil</router-link
+        >
       </li>
       <li>
         <router-link to="/about">About</router-link>
@@ -46,18 +51,29 @@ export default {
 @import './src/assets/scss/variables.scss';
 
 .nav {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
   padding: 0.8rem;
   font-size: 1.7rem;
-  font-weight: 700;
 
-  li {
-    margin: 2rem 0;
+  a {
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    position: relative;
 
-    .router-link-active,
+    &.router-link-active,
     .router-link-exact-active {
-      color: $active_links;
+      transition: 0.3s ease;
+
+      &::before {
+        position: absolute;
+        content: ' ';
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: -4px;
+        display: inline-block;
+        background: $primary_color;
+      }
     }
   }
 }

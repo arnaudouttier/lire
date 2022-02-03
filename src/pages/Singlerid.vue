@@ -2,7 +2,7 @@
   <section
     class="singlerid"
     :class="{ activerSidebar: this.$store.state.sidebarActive }"
-    v-if="this.$store.state.toolerid"
+    v-if="this.$store.state.sidebarActive"
   >
     <button @click="sidebarActive()"><span>X</span></button>
     <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />

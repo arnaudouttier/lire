@@ -2,7 +2,7 @@
   "posts": [
     {
       "id": 1,
-      "featured_image": "blog-01-500x182.jpg",
+      "featured_image": "itest.jpg",
       "altImage": "robot picture",
       "title": "The Necessity of Silence",
       "slug": "the-necessity-of-silence",
@@ -13,6 +13,7 @@
     },
     {
       "id": 2,
+      "featured_image": "itest.jpg",
       "title": "Web Design is 95% Typography",
       "slug": "web-design-is-typography",
       "category": "Web",
@@ -22,6 +23,7 @@
     },
     {
       "id": 3,
+      "featured_image": "itest.jpg",
       "title": "HTML5 and SEO",
       "slug": "html-and-seo",
       "category": "ville",
@@ -31,6 +33,7 @@
     },
     {
       "id": 4,
+      "featured_image": "itest.jpg",
       "title": "Le monde de l'autre",
       "slug": "le-monde-de-autre",
       "category": "ville",
@@ -40,6 +43,7 @@
     },
     {
       "id": 5,
+      "featured_image": "itest.jpg",
       "title": "Le refus de l'altérité",
       "slug": "le-refus-alterite",
       "category": "ville",
@@ -49,6 +53,7 @@
     },
     {
       "id": 6,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -58,6 +63,7 @@
     },
     {
       "id": 7,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -67,6 +73,7 @@
     },
     {
       "id": 8,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -76,6 +83,7 @@
     },
     {
       "id": 9,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -85,6 +93,7 @@
     },
     {
       "id": 10,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -94,6 +103,7 @@
     },
     {
       "id": 11,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -103,6 +113,7 @@
     },
      {
       "id": 12,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",
@@ -112,6 +123,7 @@
     },
     {
       "id": 13,
+      "featured_image": "itest.jpg",
       "title": "L'ecueil de l'ascendance et des oriins",
       "slug": "lecueil",
       "category": "Web",

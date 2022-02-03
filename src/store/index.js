@@ -15,8 +15,6 @@ export default createStore({
       state.sidebarActive = !state.sidebarActive
     }
   },
-  actions: {
-  },
-  modules: {
-  }
+  actions: {},
+  modules: {}
 })

@@ -4,9 +4,9 @@
       <div class="post_header">
         <h3 class="post_title">
           <router-link
-            @click="[sidebarActive, rzMasonryItems]"
+            @click="sidebarActive"
             :to="{
-              name: this.$store.state.toolerid ? 'Singlerid' : 'Single',
+              name: fm ? 'Singlerid' : 'Single',
               params: { category: post.category, id: post.id, slug: post.slug },
             }"
             >{{ post.title }}
@@ -14,10 +14,9 @@
         </h3>
         <div class="post_meta">
           <p>
-            posted in <span class="meta">{{ post.category }}</span
-            >on<span class="meta">{{ post.date }}</span> by<span class="meta">{{
-              post.author
-            }}</span>
+            Category<span class="meta">{{ post.category }}</span
+            >on<span class="meta">{{ post.date }}</span>
+            <span class="meta">Auteur {{ post.author }}</span>
           </p>
         </div>
         <img
@@ -51,7 +50,8 @@ export default {
   name: 'Post',
   data () {
     return {
-      postBtn: 'Contuning reading'
+      postBtn: 'Contuning reading',
+      fm: this.$store.state.toolerid
     }
   },
   props: {
@@ -63,13 +63,7 @@ export default {
   methods: {
     sidebarActive () {
       this.$store.commit('sidebarActive')
-    },
-    rzMasonryItems () {
-      this.$emit('resizeMasonryItems')
     }
-  },
-  updated () {
-    this.rzMasonryItems()
   }
 }
 </script>
@@ -78,7 +72,6 @@ export default {
 @import '../assets/scss/variables.scss';
 
 .post {
-  text-align: center;
   margin-bottom: 6.4rem;
 }
 .post_title {
@@ -95,11 +88,8 @@ export default {
   text-align: justify;
 }
 .post_main_link {
-  max-width: 250px;
-  margin: 0 auto;
   font-weight: 400;
   font-size: 1.4rem;
-  border-bottom: 1px dotted #ccc;
   letter-spacing: 2px;
   padding: 0.6rem;
 

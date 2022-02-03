@@ -5,47 +5,57 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
-    children: [
-      {
-        path: 'single/:category/:id/:slug',
-        name: 'Singlerid',
-        component: () => import(/* webpackChunkName: "about" */ '@/pages/Singlerid.vue'),
-        props: route => ({ ...route.params, id: parseInt(route.params.id) }),
-        children: [
-          {
-            path: ':relatedpostSlug',
-            name: 'RelatedPostShowrid',
-            component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostShowrid.vue'),
-            props: route => ({ ...route.params })
-          }
-        ]
-      }
-    ]
+    component: Home
   },
   {
-    path: '/single/:category/:id/:slug',
+    path: '/post/:category/:id/:slug',
     name: 'Single',
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/Single.vue'),
-    props: route => ({ ...route.params, id: parseInt(route.params.id) }),
+    component: () => import('@/pages/Single.vue'),
+    props: (route) => ({ ...route.params, id: parseInt(route.params.id) }),
     children: [
       {
-        path: ':relatedpostSlug',
+        path: '/post/:category/:id/:slug/:relatedPostSlug',
         name: 'RelatedPostShow',
-        component: () => import(/* webpackChunkName: "about" */ '@/components/RelatedPostShow.vue'),
-        props: route => ({ ...route.params })
+        component: () => import('@/components/RelatedPostShow.vue'),
+        props: (route) => ({ ...route.params, id: parseInt(route.params.id) })
       }
     ]
   },
   {
     path: '/about',
     name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/About.vue')
+    component: () => import('@/pages/About.vue')
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/NotFound.vue')
+    component: () => import('@/pages/NotFound.vue')
+  },
+
+  // Rid Version
+  {
+    path: '/omerid',
+    name: 'omerid',
+    component: () => import('@/pages/omerid.vue'),
+    children: [
+      {
+        path: '/post/:category/:id/:slug',
+        name: 'Singlerid',
+        component: () => import('@/pages/Singlerid.vue'),
+        props: (route) => ({ ...route.params, id: parseInt(route.params.id) }),
+        children: [
+          {
+            path: '/post/:category/:id/:slug/:relatedPostSlug',
+            name: 'RelatedPostShowrid',
+            component: () => import('@/components/RelatedPostShowrid.vue'),
+            props: (route) => ({
+              ...route.params,
+              id: parseInt(route.params.id)
+            })
+          }
+        ]
+      }
+    ]
   }
 ]
 

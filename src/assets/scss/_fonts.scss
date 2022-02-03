@@ -1,46 +1,24 @@
-// ==========================================================================
-// Base / Fonts
-// ==========================================================================
 @font-face {
-    font-family: 'Lora';
-    src: local("Lora"), 
-        url( '~@/assets/fonts/Lora-VariableFont_wght.ttf' ) format('truetype');
+    font-family: 'Inter';
+    src: local('Inter-Regular'),
+        url('~@/assets/fonts/Inter-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Lora Italic';
-    src: local("Lora Italic"), 
-        url('~@/assets/fonts/Lora-Italic-VariableFont_wght.ttf') format('truetype');
-    font-style: italic;
-    }
-
-@font-face {
-    font-family: 'Oswald';
-    src: local("Oswald"), 
-        url('~@/assets/fonts/Oswald-VariableFont_wght.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Inter-bold';
+    src: local('Inter-Bold'),
+        url('~@/assets/fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: bold;
+    font-display: swap;
 }
 
-@font-face {
-    font-family: 'Coustard';
-    src: local("Coustard"), 
-        url('~@/assets/fonts/Coustard-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'UnifrakturMaguntia';
-    src: local("UnifrakturMaguntia"), 
-        url('~@/assets/fonts/UnifrakturMaguntia-Regular.ttf') format('truetype');
-}
-
-
-$font_lora: "Lora" , Georgia, serif;
-$font_lora_italic: "Lora Italic",  Georgia, serif;
-$font_coustard : "Coustard",  Georgia, serif;
-$font_UnifrakturMaguntia : "UnifrakturMaguntia",  Georgia, serif;
-$font-oswald: "Oswald", Georgia, serif;
+$font_inter_regular: 'Inter',
+'Helvetica Neue',
+Helvetica,
+Arial,
+sans-serif;
+$font_inter_bold: 'Inter-bold';
