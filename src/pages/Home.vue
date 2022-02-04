@@ -1,8 +1,10 @@
 <template>
-  <section class="home">
-    <Post v-for="post in posts" :key="post.id" :post="post" />
-  </section>
-  <router-view />
+  <div>
+    <section class="home">
+      <Post v-for="post in posts" :key="post.id" :post="post" />
+    </section>
+    <router-view />
+  </div>
 </template>
 
 <script>

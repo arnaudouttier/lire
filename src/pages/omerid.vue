@@ -3,7 +3,6 @@
     class="home omerid"
     :class="{ activerid: this.$store.state.toolerid }"
   >
-    <p>Masonry</p>
     <Post
       v-for="post in posts"
       :key="post.id"
@@ -28,7 +27,9 @@ export default {
     }
   },
   mounted () {
-    this.resizeAllMasonryItems()
+    setTimeout(() => {
+      this.resizeAllMasonryItems()
+    }, 50)
   },
   methods: {
     resizeMasonryItem (item) {
@@ -45,6 +46,7 @@ export default {
           rowGap) /
           (rowHeight + rowGap)
       )
+      console.log(rowSpan)
       item.style.gridRowEnd = 'span ' + rowSpan
     },
     resizeAllMasonryItems () {
@@ -61,10 +63,12 @@ export default {
 @media (min-width: 768px) {
   .home {
     &.activerid {
+      padding: 2rem;
       max-height: 100vh;
       overflow: scroll;
       display: grid;
-      grid-gap: 2rem;
+      column-gap: 2rem;
+      row-gap: 5rem;
       grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       grid-auto-rows: 0;
     }

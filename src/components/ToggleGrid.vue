@@ -1,13 +1,15 @@
 <template>
-  <router-link
-    class="btn tole-rid"
-    :class="{ active: this.$store.state.toolerid }"
-    @click="ActiveRid()"
-    :to="{
-      name: this.$store.state.toolerid ? 'Home' : 'omerid',
-    }"
-  >
-  </router-link>
+  <div class="tooleRid_lin">
+    <router-link
+      class="btn tole-rid"
+      :class="{ active: this.$store.state.toolerid }"
+      @click="ActiveRid()"
+      :to="{
+        name: this.$store.state.toolerid ? 'Home' : 'omerid',
+      }"
+    >
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -22,6 +24,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.tooleRid_lin {
+  margin: 3rem 0;
+}
+
 .tole-rid {
   display: inline-block;
   position: relative;

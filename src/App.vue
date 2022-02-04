@@ -1,10 +1,12 @@
 <template>
   <div class="site" :class="{ activerid: this.$store.state.toolerid }">
     <Header />
-    <main class="site_main">
-      toolerid : {{ this.$store.state.toolerid }} activeSidebar :
-      {{ this.$store.state.sidebarActive }}
-      <router-view :key="this.$route.path" />
+    <main class="site-main">
+      <router-view v-slot="{ Component }">
+        <transition name="fadeIn">
+          <component :is="Component" :key="this.$route.path"> </component>
+        </transition>
+      </router-view>
     </main>
     <Footer />
   </div>
@@ -30,9 +32,22 @@ export default {
   margin: 0 auto;
 }
 
-.site_main {
+.site-main {
   max-width: 780px;
   margin: 0 auto;
+}
+
+.fadeIn-enter-active {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 768px) {
@@ -47,7 +62,7 @@ export default {
       grid-template-columns: 200px 1fr;
       grid-template-rows: repeat(2, 1fr) auto;
 
-      .site_main {
+      .site-main {
         max-width: 100%;
         overflow: hidden;
         grid-row: 1/3;

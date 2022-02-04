@@ -1,8 +1,14 @@
 <template>
   <div class="site-logo">
     <h1>
-      <router-link to="/">Lire</router-link>
+      <router-link
+        :to="{
+          name: this.$store.state.toolerid ? 'omerid' : 'Home',
+        }"
+        >Lire</router-link
+      >
     </h1>
+    <p>[ BETA ]</p>
   </div>
 </template>
 

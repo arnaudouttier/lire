@@ -50,6 +50,7 @@ export default {
 <style lang="scss">
 @import 'src/assets/scss/style.scss';
 .singlerid {
+  padding: 2rem;
   background: red;
   position: absolute;
   top: 0;

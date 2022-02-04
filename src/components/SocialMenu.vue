@@ -1,6 +1,6 @@
 <template>
   <div class="social_navigation">
-    <a href="https://github.com/arnaudouttier"> itub</a>
+    <a href="https://github.com/arnaudouttier"> gitub</a>
     <a href="#">Frotend Mentor </a>
     <a href="https://www.frontendmentor.io/profile/arnaudouttier">Vercel </a>
     <p>{{ currentDateTime() }}</p>
@@ -22,6 +22,7 @@ export default {
 
 <style scoped lang="scss">
 .social_navigation {
+  color: #000;
   a,
   p {
     display: block;

@@ -32,7 +32,7 @@
         </article>
       </router-link>
     </div>
-    <router-view />
+    <router-view class="related_post_view" />
   </section>
 </template>
 
@@ -64,17 +64,12 @@ export default {
 <style scoped lang="scss">
 @import 'src/assets/scss/style.scss';
 
-.related_post_link {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 .related_post {
+  margin-bottom: 1rem;
   padding: 1rem;
-  margin-bottom: 3.2rem;
   color: rgb(255, 255, 255);
   position: relative;
+  background-size: cover;
 
   &::before {
     content: '';
@@ -109,17 +104,15 @@ export default {
   }
 }
 
-@media (min-width: 768px) {
+.related_post_view {
+  margin: 10rem 0;
+}
+
+@media (min-width: 992px) {
   .related_posts_content {
     display: flex;
     justify-content: space-between;
     column-gap: 1rem;
-  }
-
-  .related_post {
-    h5 {
-      height: 5rem;
-    }
   }
 }
 </style>
