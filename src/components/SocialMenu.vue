@@ -22,7 +22,6 @@ export default {
 
 <style scoped lang="scss">
 .social_navigation {
-  color: #000;
   a,
   p {
     display: block;
