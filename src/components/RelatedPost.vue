@@ -11,7 +11,6 @@
             ? 'RelatedPostShowrid'
             : 'RelatedPostShow',
           params: { relatedPostSlug: post.slug },
-          hash: '#related_post_view',
         }"
       >
         <article
@@ -33,7 +32,7 @@
         </article>
       </router-link>
     </div>
-    <router-view id="related_post_view" class="related_post_view" />
+    <router-view class="related_post_view" />
   </section>
 </template>
 

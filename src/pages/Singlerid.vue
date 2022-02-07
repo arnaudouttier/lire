@@ -4,7 +4,7 @@
     :class="{ activerSidebar: this.$store.state.sidebarActive }"
     v-if="this.$store.state.sidebarActive"
   >
-    <button @click="sidebarActive()"><span>X</span></button>
+    <button class="btn sidebar_close" @click="sidebarActive()"></button>
     <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
     <RelatedPost :id="id" />
     <GoBack />
@@ -50,8 +50,10 @@ export default {
 <style lang="scss">
 @import 'src/assets/scss/style.scss';
 .singlerid {
-  padding: 2rem;
-  background: red;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background: rgb(0, 0, 0);
   position: absolute;
   top: 0;
   right: 0;
@@ -61,6 +63,31 @@ export default {
 
   &.activerSidebar {
     max-width: 50%;
+  }
+}
+
+.sidebar_close {
+  width: 30px;
+  height: 30px;
+  border: 0 !important;
+  padding: 0;
+  background-color: transparent;
+  margin: 1rem 1rem 6rem 1rem;
+  align-self: end;
+
+  &::before,
+  &::after {
+    content: ' ';
+    position: absolute;
+    background-color: $primary_color;
+    height: 2px;
+    width: 30px;
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
   }
 }
 </style>
