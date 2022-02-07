@@ -3,7 +3,7 @@
     <Header />
     <main class="site-main">
       <router-view v-slot="{ Component }">
-        <transition name="fadeIn">
+        <transition :name="animationName">
           <component :is="Component" :key="this.$route.path"> </component>
         </transition>
       </router-view>
@@ -21,6 +21,18 @@ export default {
   components: {
     Header,
     Footer
+  },
+  data () {
+    return {
+      animationName: undefined
+    }
+  },
+  watch: {
+    $route (to, from) {
+      const toDepth = from.path.split('/').length
+      console.log(toDepth)
+      this.animationName = toDepth > 2 ? ' ' : 'fadeIn'
+    }
   }
 }
 </script>
@@ -59,7 +71,7 @@ export default {
       max-height: 100vh;
       max-width: 100%;
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 150px 1fr;
       grid-template-rows: repeat(2, 1fr) auto;
 
       .site-main {

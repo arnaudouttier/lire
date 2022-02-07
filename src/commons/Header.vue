@@ -38,10 +38,11 @@ export default {
 @media (min-width: 768px) {
   .site-header {
     padding: 6.4rem 0;
-
-    &activerid {
+    &.activerid {
       grid-row: 1/2;
       grid-column: 1/2;
+      text-align: left;
+      padding: 0 3rem;
     }
   }
 }

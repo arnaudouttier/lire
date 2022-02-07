@@ -15,8 +15,10 @@
         <div class="post_meta">
           <p>
             Category<span class="meta">{{ post.category }}</span
-            >on<span class="meta">{{ post.date }}</span>
-            <span class="meta">Auteur {{ post.author }}</span>
+            >on<span class="meta">{{ post.date }}</span> Author<span
+              class="meta"
+              >{{ post.author }}</span
+            >
           </p>
         </div>
         <img

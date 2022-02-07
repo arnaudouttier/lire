@@ -83,12 +83,17 @@ export default {
 }
 
 .nav-mobile {
+  margin: 2rem 0;
   transition: all 0.4s ease-in-out;
   max-height: 0;
   overflow: hidden;
 
   &.activeMenu {
     max-height: 400px;
+  }
+
+  li {
+    margin: 2rem;
   }
 }
 
@@ -109,6 +114,21 @@ export default {
     }
     li:not(:first-child) {
       margin-left: 2rem;
+    }
+  }
+
+  .activerid {
+    nav {
+      padding: 0;
+      margin-bottom: 6rem;
+      font-size: 1.7rem;
+      ul {
+        display: block;
+
+        li {
+          margin: 2rem 0 !important;
+        }
+      }
     }
   }
 }
