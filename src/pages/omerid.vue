@@ -1,23 +1,19 @@
 <template>
-  <section
-    class="home omerid"
-    :class="{ activerid: this.$store.state.toolerid }"
-  >
-    <Post
-      v-for="post in posts"
-      :key="post.id"
-      :post="post"
-      v-on:activeMasonryFunction="resizeAllMasonryItems()"
-    />
-  </section>
-  <router-view />
+  <div>
+    <section
+      class="home omerid"
+      :class="{ active: this.$store.state.toolerid }"
+    >
+      <Post v-for="post in posts" :key="post.id" :post="post" />
+    </section>
+  </div>
 </template>
 
 <script>
 import Post from '../components/Post.vue'
 
 export default {
-  name: 'omerid',
+  name: 'Home',
   components: {
     Post
   },
@@ -26,10 +22,10 @@ export default {
       posts: this.$store.state.posts
     }
   },
-  mounted () {
+  updated () {
     setTimeout(() => {
       this.resizeAllMasonryItems()
-    }, 50)
+    }, 500)
   },
   methods: {
     resizeMasonryItem (item) {
@@ -62,7 +58,7 @@ export default {
 <style  lang="scss">
 @media (min-width: 768px) {
   .home {
-    &.activerid {
+    &.active {
       padding: 2rem;
       max-height: 100vh;
       overflow: scroll;

@@ -6,7 +6,7 @@
       "altImage": "robot picture",
       "title": "The Necessity of Silence",
       "slug": "the-necessity-of-silence",
-      "category": "ville",
+      "category": "web",
       "date": "February 5 2013",
       "author": "Louis",
       "content": "This is an interview book of world film composers. Silence, which indicates the space without sound, its existential meaning is just equivalent to the technique of “leaving blank” in Chinese painting. From nothing comes from nothing, “leaving blank” doesn’t mean empty but roots in the essence of everything."
@@ -16,120 +16,10 @@
       "featured_image": "cp15.webp",
       "title": "Web Design is 95% Typography",
       "slug": "web-design-is-typography",
-      "category": "Web",
+      "category": "web",
       "date": "February 2, 2013",
       "author": "Arnaud",
       "content": "Kubrick does not have one single rigid role: it is not only a bookstore but also a café and a publisher. 3 versions of shop card are thus created for Kubrick with same set of keywords highlighted but varied in description, to tell its diversity and richness"
-    },
-    {
-      "id": 3,
-      "featured_image": "itest.jpg",
-      "title": "HTML5 and SEO",
-      "slug": "html-and-seo",
-      "category": "ville",
-      "date": "February 1 2013",
-      "author": "Victor",
-      "content": "Sed feugiat consectetur enim, in feugiat dui pharetra eget. Donec quis nunc diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 4,
-      "featured_image": "cp15.webp",
-      "title": "Le monde de l'autre",
-      "slug": "le-monde-de-autre",
-      "category": "ville",
-      "date": "February 1 2013",
-      "author": "Emma",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 5,
-      "featured_image": "itest.jpg",
-      "title": "Le refus de l'altérité",
-      "slug": "le-refus-alterite",
-      "category": "ville",
-      "date": "February 1 2015",
-      "author": "Jean",
-      "content": "Sed feugiat cm. mus. Duis non risus eu risusulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 6,
-      "featured_image": "cp15.webp",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 7,
-      "featured_image": "itest.jpg",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 8,
-      "featured_image": "cp15.webp",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 9,
-      "featured_image": "itest.jpg",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 10,
-      "featured_image": "cp15.webp",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 11,
-      "featured_image": "itest.jpg",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-     {
-      "id": 12,
-      "featured_image": "cp15.webp",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
-    },
-    {
-      "id": 13,
-      "featured_image": "itest.jpg",
-      "title": "L'ecueil de l'ascendance et des oriins",
-      "slug": "lecueil",
-      "category": "Web",
-      "date": "February 1 2000",
-      "author": "Victor",
-      "content": "Sed feugiat cm. Cum sociis natoque penatibus et magniur ridiculus mus. Duis non risus eu risus auctor vulputate. Nunc id lorem at nulla ornare vestibulum sagittis vel diam. Nulla magna quam, dignissim id pellentesque at, rhoncus vitae sem. Mauris leo velit, condimentum ut condimentum ac, aliquet ac turpis. Donec in orci arcu."
     }
   ]
 }

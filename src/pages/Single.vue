@@ -1,6 +1,12 @@
 <template>
   <section class="single">
-    <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
+    <SinglePost
+      v-for="post in singlePost"
+      :key="post.id"
+      :post="post"
+      :id="id"
+    />
+    {{ this.id }}
     <RelatedPost :id="id" />
     <GoBack />
   </section>

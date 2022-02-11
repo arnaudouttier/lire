@@ -1,4 +1,5 @@
 <template>
+  {{ this.id }}
   <section class="related_posts">
     <h4>Related Posts</h4>
     <div class="related_posts_content">

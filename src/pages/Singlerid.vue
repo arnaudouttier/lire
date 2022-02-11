@@ -1,11 +1,17 @@
 <template>
   <section
-    class="singlerid"
-    :class="{ activerSidebar: this.$store.state.sidebarActive }"
     v-if="this.$store.state.sidebarActive"
+    class="singlerid"
+    :class="{ activerSidebar: this.$store.state.toolerid }"
   >
     <button class="btn sidebar_close" @click="sidebarActive()"></button>
-    <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
+    <p>pokpokpok</p>
+    <SinglePost
+      v-for="post in singlePost"
+      :key="post.id"
+      :post="post"
+      :id="id"
+    />
     <RelatedPost :id="id" />
     <GoBack />
   </section>
@@ -60,6 +66,7 @@ export default {
   max-width: 0;
   height: 100%;
   overflow: scroll;
+  z-index: 999;
 
   &.activerSidebar {
     max-width: 50%;

@@ -1,9 +1,8 @@
 <template>
   <div>
-    <section class="home">
+    <section class="home" :class="{ active: this.$store.state.toolerid }">
       <Post v-for="post in posts" :key="post.id" :post="post" />
     </section>
-    <router-view />
   </div>
 </template>
 

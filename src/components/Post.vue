@@ -6,7 +6,7 @@
           <router-link
             @click="sidebarActive"
             :to="{
-              name: fm ? 'Singlerid' : 'Single',
+              name: this.$store.state.toolerid ? 'Singlerid' : 'Single',
               params: { category: post.category, id: post.id, slug: post.slug },
             }"
             >{{ post.title }}
@@ -53,7 +53,7 @@ export default {
   data () {
     return {
       postBtn: 'Contuning reading',
-      fm: this.$store.state.toolerid
+      fm: this.$store.state.sidebarActive
     }
   },
   props: {
@@ -64,7 +64,10 @@ export default {
   },
   methods: {
     sidebarActive () {
-      this.$store.commit('sidebarActive')
+      if (this.$store.state.toolerid) {
+        console.log(this.$store.state.toolerid)
+        this.$store.commit('sidebarActive')
+      }
     }
   }
 }

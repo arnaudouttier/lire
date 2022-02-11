@@ -1,24 +1,23 @@
 <template>
-  <div class="site" :class="{ activerid: this.$store.state.toolerid }">
+  <Singlerid />
+  <div class="site" :class="{ active: this.$store.state.toolerid }">
     <Header />
     <main class="site-main">
-      <router-view v-slot="{ Component }">
-        <transition :name="animationName">
-          <component :is="Component" :key="this.$route.path"> </component>
-        </transition>
-      </router-view>
+      <router-view />
     </main>
     <Footer />
   </div>
 </template>
 
 <script>
+import Singlerid from './pages/Singlerid.vue'
 import Header from './commons/Header.vue'
 import Footer from './commons/Footer.vue'
 
 export default {
   name: 'App',
   components: {
+    Singlerid,
     Header,
     Footer
   },
@@ -42,6 +41,7 @@ export default {
 .site {
   max-width: 90%;
   margin: 0 auto;
+  position: relative;
 }
 
 .site-main {
@@ -67,7 +67,7 @@ export default {
     max-width: 80%;
     margin: 0 auto;
 
-    &.activerid {
+    &.active {
       max-height: 100vh;
       max-width: 100%;
       display: grid;

@@ -1,10 +1,10 @@
 <template>
-  <nav class="nav site-navigation">
+  <nav class="nav site_navigation">
     <ul>
       <li>
         <router-link
           :to="{
-            name: this.$store.state.toolerid ? 'omerid' : 'Home',
+            name: 'Home',
           }"
           >Accueil</router-link
         >
@@ -14,11 +14,11 @@
       </li>
     </ul>
   </nav>
-  <div class="nav site-nav-mobile">
+  <div class="nav nav_mobile">
     <button class="btn">
-      <a href="#" @click="activeMenu">MENU</a>
+      <a href="#" @click="expandNav()">MENU</a>
     </button>
-    <nav class="nav-mobile" v-bind:class="{ activeMenu: isActiveMenu }">
+    <nav class="nav-mobile" v-bind:class="{ nav_mobile: isMobile }">
       <ul>
         <li>
           <router-link to="/">Accueil</router-link>
@@ -36,12 +36,12 @@ export default {
   name: 'TheNavigation',
   data () {
     return {
-      isActiveMenu: false
+      isMobile: false
     }
   },
   methods: {
-    activeMenu () {
-      this.isActiveMenu = !this.isActiveMenu
+    expandNav () {
+      this.isMobile = !this.isMobile
     }
   }
 }
@@ -78,7 +78,7 @@ export default {
   }
 }
 
-.site-navigation {
+.site_navigation {
   display: none;
 }
 
@@ -88,7 +88,7 @@ export default {
   max-height: 0;
   overflow: hidden;
 
-  &.activeMenu {
+  &.isMobile {
     max-height: 400px;
   }
 
@@ -102,10 +102,10 @@ export default {
   .nav {
     font-size: 2rem;
   }
-  .site-nav-mobile {
+  .nav_mobile {
     display: none;
   }
-  .site-navigation {
+  .site_navigation {
     display: block;
 
     ul {
@@ -117,7 +117,7 @@ export default {
     }
   }
 
-  .activerid {
+  .active {
     nav {
       padding: 0;
       margin-bottom: 6rem;

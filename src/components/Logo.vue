@@ -3,7 +3,7 @@
     <h1>
       <router-link
         :to="{
-          name: this.$store.state.toolerid ? 'omerid' : 'Home',
+          name: 'Home',
         }"
         >Lire</router-link
       >
