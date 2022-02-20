@@ -1,20 +1,20 @@
 <template>
   <section class="single">
-    <SinglePost v-for="post in singlePost" :key="post.id" :post="post" />
+    <Post v-for="post in singlePost" :key="post.id" :post="post" />
     <RelatedPost :id="id" />
     <GoBack />
   </section>
 </template>
 
 <script>
-import SinglePost from '@/components/SinglePost.vue'
+import Post from '@/components/Post.vue'
 import RelatedPost from '@/components/RelatedPost.vue'
 import GoBack from '@/components/GoBack.vue'
 
 export default {
   name: 'Single',
   components: {
-    SinglePost,
+    Post,
     RelatedPost,
     GoBack
   },

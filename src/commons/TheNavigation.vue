@@ -4,7 +4,7 @@
       <li>
         <router-link
           :to="{
-            name: this.$store.state.toolerid ? 'omerid' : 'Home',
+            name: this.$store.state.toolerid ? 'HomeGrid' : 'Home',
           }"
           >Accueil</router-link
         >

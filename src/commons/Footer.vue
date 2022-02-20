@@ -1,7 +1,7 @@
 <template>
   <footer
     class="site-footer"
-    :class="{ activerid: this.$store.state.toolerid }"
+    :class="{ activegrid: this.$store.state.toolerid }"
   >
     <SocialMenu />
   </footer>
@@ -29,11 +29,12 @@ export default {
 
 @media (min-width: 768px) {
   .site-footer {
-    &.activerid {
+    &.activegrid {
       grid-row: 2/3;
       grid-column: 1/2;
       padding: 3.2rem 3rem;
       border: 0;
+      align-self: flex-end;
     }
   }
 }

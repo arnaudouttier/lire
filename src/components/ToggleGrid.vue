@@ -1,11 +1,11 @@
 <template>
-  <div class="tooleRid_lin">
+  <div class="togglegrid_link">
     <router-link
-      class="btn tole-rid"
+      class="btn toggle-grid"
       :class="{ active: this.$store.state.toolerid }"
-      @click="ActiveRid()"
+      @click="ActiveGrid()"
       :to="{
-        name: this.$store.state.toolerid ? 'Home' : 'omerid',
+        name: this.$store.state.toolerid ? 'Home' : 'HomeGrid',
       }"
     >
     </router-link>
@@ -16,7 +16,7 @@
 export default {
   name: 'toolerid',
   methods: {
-    ActiveRid () {
+    ActiveGrid () {
       this.$store.commit('tolerid')
     }
   }
@@ -24,17 +24,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tooleRid_lin {
+.togglegrid_link {
   display: none;
 }
 
 @media (min-width: 992px) {
-  .tooleRid_lin {
+  .togglegrid_link {
     display: block;
     margin: 3rem 0;
   }
 
-  .tole-rid {
+  .toggle-grid {
     display: inline-block;
     position: relative;
     width: 50px;
@@ -45,7 +45,7 @@ export default {
     background: rgba(128, 128, 128, 0.561);
 
     &::before {
-      content: ' ';
+      content: " ";
       position: absolute;
       left: -5px;
       top: 0;

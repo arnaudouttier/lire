@@ -6,7 +6,7 @@
           <router-link
             @click="sidebarActive"
             :to="{
-              name: fm ? 'Singlerid' : 'Single',
+              name: this.$store.state.toolerid ? 'SingleGrid' : 'Single',
               params: { category: post.category, id: post.id, slug: post.slug },
             }"
             >{{ post.title }}
@@ -21,22 +21,24 @@
             >
           </p>
         </div>
-        <img
-          class="featured_image"
-          v-if="post.featured_image"
-          :src="require('@/assets/images/' + post.featured_image)"
-          :alt="post.slug"
-        />
+        <div class="img-post">
+          <img
+            class="featured_image"
+            v-if="post.featured_image"
+            :src="require('@/assets/images/' + post.featured_image)"
+            :alt="post.slug"
+          />
+        </div>
       </div>
       <div class="post_main">
-        <div class="post_mqin_text">
+        <div class="post_main_text">
           <p>{{ post.content }}</p>
         </div>
         <div class="post_main_link">
           <router-link
             @click="sidebarActive"
             :to="{
-              name: this.$store.state.toolerid ? 'Singlerid' : 'Single',
+              name: this.$store.state.toolerid ? 'SingleGrid' : 'Single',
               params: { category: post.category, id: post.id, slug: post.slug },
             }"
             >{{ postBtn }}
@@ -52,8 +54,7 @@ export default {
   name: 'Post',
   data () {
     return {
-      postBtn: 'Contuning reading',
-      fm: this.$store.state.toolerid
+      postBtn: 'Contuning reading'
     }
   },
   props: {
@@ -64,14 +65,16 @@ export default {
   },
   methods: {
     sidebarActive () {
-      this.$store.commit('sidebarActive')
+      if (this.$store.state.toolerid) {
+        this.$store.commit('sidebarActive')
+      }
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import '../assets/scss/variables.scss';
+@import "../assets/scss/variables.scss";
 
 .post {
   margin-bottom: 6.4rem;
@@ -82,6 +85,21 @@ export default {
 }
 .post_meta {
   display: none;
+}
+
+.img-post {
+  overflow: hidden;
+
+  & .featured_image {
+    transform: scale(1.1) ;
+  }
+
+  &:hover {
+    & .featured_image {
+      transition: transform 0.9s ease-in-out;
+      transform: scale(1.12) rotate(1deg);
+    }
+  }
 }
 
 .post_main_text {
@@ -97,7 +115,7 @@ export default {
 
   a {
     &::after {
-      content: '→';
+      content: "→";
       margin-left: 0.8rem;
     }
   }

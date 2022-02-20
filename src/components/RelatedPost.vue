@@ -8,7 +8,7 @@
         :key="post.slug"
         :to="{
           name: this.$store.state.toolerid
-            ? 'RelatedPostShowrid'
+            ? 'RelatedPostShowGrid'
             : 'RelatedPostShow',
           params: { relatedPostSlug: post.slug },
         }"
@@ -44,12 +44,6 @@ export default {
       posts: this.$store.state.posts
     }
   },
-  props: {
-    id: {
-      type: Number,
-      required: true
-    }
-  },
   computed: {
     relatedPost () {
       return this.posts.filter(
@@ -62,7 +56,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import 'src/assets/scss/style.scss';
+@import "src/assets/scss/style.scss";
 
 .related_post {
   margin-bottom: 1rem;
@@ -72,7 +66,7 @@ export default {
   background-size: cover;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;

@@ -1,12 +1,9 @@
 <template>
-  <div class="site" :class="{ activerid: this.$store.state.toolerid }">
+  <SingleGrid />
+  <div class="site" :class="{ activegrid: this.$store.state.toolerid }">
     <Header />
     <main class="site-main">
-      <router-view v-slot="{ Component }">
-        <transition :name="animationName">
-          <component :is="Component" :key="this.$route.path"> </component>
-        </transition>
-      </router-view>
+      <router-view />
     </main>
     <Footer />
   </div>
@@ -15,30 +12,20 @@
 <script>
 import Header from './commons/Header.vue'
 import Footer from './commons/Footer.vue'
+import SingleGrid from './pages/SingleGrid.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
-  },
-  data () {
-    return {
-      animationName: undefined
-    }
-  },
-  watch: {
-    $route (to, from) {
-      const toDepth = from.path.split('/').length
-      console.log(toDepth)
-      this.animationName = toDepth > 2 ? ' ' : 'fadeIn'
-    }
+    Footer,
+    SingleGrid
   }
 }
 </script>
 
 <style lang="scss">
-@import './src/assets/scss/style.scss';
+@import "./src/assets/scss/style.scss";
 .site {
   max-width: 90%;
   margin: 0 auto;
@@ -47,10 +34,6 @@ export default {
 .site-main {
   max-width: 780px;
   margin: 0 auto;
-}
-
-.fadeIn-enter-active {
-  animation: fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn {
@@ -63,11 +46,22 @@ export default {
 }
 
 @media (min-width: 768px) {
+  .activeSidebar + .activegrid {
+    &:after {
+      content: "ddd";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.671);
+    }
+  }
   .site {
     max-width: 80%;
     margin: 0 auto;
 
-    &.activerid {
+    &.activegrid {
       max-height: 100vh;
       max-width: 100%;
       display: grid;

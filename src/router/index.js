@@ -32,22 +32,22 @@ const routes = [
     component: () => import('@/pages/NotFound.vue')
   },
 
-  // Rid Version
+  // GRID VERSION
   {
-    path: '/omerid',
-    name: 'omerid',
-    component: () => import('@/pages/omerid.vue'),
+    path: '/HomeGrid',
+    name: 'HomeGrid',
+    component: () => import('@/pages/HomeGrid.vue'),
     children: [
       {
-        path: '/post/:category/:id/:slug',
-        name: 'Singlerid',
-        component: () => import('@/pages/Singlerid.vue'),
+        path: '/HomeGrid/:id/:slug',
+        name: 'SingleGrid',
+        component: () => import('@/pages/SingleGrid.vue'),
         props: (route) => ({ ...route.params, id: parseInt(route.params.id) }),
         children: [
           {
             path: '/post/:category/:id/:slug/:relatedPostSlug',
-            name: 'RelatedPostShowrid',
-            component: () => import('@/components/RelatedPostShowrid.vue'),
+            name: 'RelatedPostShowGrid',
+            component: () => import('@/components/RelatedPostShowGrid.vue'),
             props: (route) => ({
               ...route.params,
               id: parseInt(route.params.id)
@@ -70,7 +70,7 @@ const router = createRouter({
         selector: to.hash
       }
     } else if (
-      to.name === 'RelatedPostShowrid' ||
+      to.name === 'RelatedPostShowGrid' ||
       to.name === 'RelatedPostShow'
     ) {
       return {

@@ -1,23 +1,17 @@
 <template>
   <section
-    class="home omerid"
+    class="home Homegrid"
     :class="{ activerid: this.$store.state.toolerid }"
   >
-    <Post
-      v-for="post in posts"
-      :key="post.id"
-      :post="post"
-      v-on:activeMasonryFunction="resizeAllMasonryItems()"
-    />
+    <Post v-for="post in posts" :key="post.id" :post="post" />
   </section>
-  <router-view />
 </template>
 
 <script>
 import Post from '../components/Post.vue'
 
 export default {
-  name: 'omerid',
+  name: 'HomeGrid',
   components: {
     Post
   },
@@ -26,14 +20,14 @@ export default {
       posts: this.$store.state.posts
     }
   },
-  mounted () {
+  updated () {
     setTimeout(() => {
       this.resizeAllMasonryItems()
-    }, 50)
+    }, 2000)
   },
   methods: {
     resizeMasonryItem (item) {
-      const grid = document.querySelector('.home')
+      const grid = document.querySelector('.Homegrid')
       const rowGap = parseInt(
         window.getComputedStyle(grid).getPropertyValue('grid-row-gap')
       )
@@ -46,12 +40,10 @@ export default {
           rowGap) /
           (rowHeight + rowGap)
       )
-      console.log(rowSpan)
       item.style.gridRowEnd = 'span ' + rowSpan
     },
     resizeAllMasonryItems () {
       document.querySelectorAll('.post').forEach((p) => {
-        console.log(p)
         this.resizeMasonryItem(p)
       })
     }

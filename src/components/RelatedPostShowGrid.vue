@@ -29,7 +29,7 @@
 </template>
 <script>
 export default {
-  name: 'RelatedPostShowrid',
+  name: 'RelatedPostShow',
   data () {
     return {
       posts: this.$store.state.posts
