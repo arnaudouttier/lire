@@ -1,0 +1,1 @@
+@media(min-width:768px){.home.activegrid{padding:2rem;max-height:100vh;overflow:scroll;display:grid;-moz-column-gap:2rem;column-gap:2rem;row-gap:5rem;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));grid-auto-rows:0}}
