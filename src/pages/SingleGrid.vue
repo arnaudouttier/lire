@@ -1,10 +1,11 @@
 <template>
   <section
+    @click="closeSidebar()"
     class="singlegrid"
     :class="{ activeSidebar: this.$store.state.sidebarActive }"
     v-if="this.$store.state.sidebarActive"
   >
-    <button class="btn sidebar_close" @click="sidebarActive()"></button>
+    <button class="btn sidebar-close" @click="sidebarActive()"></button>
     <Post v-for="post in singlePost" :key="post.id" :post="post" />
     <RelatedPost />
     <GoBack />
@@ -28,7 +29,16 @@ export default {
       posts: this.$store.state.posts
     }
   },
+  mounted () {
+    this.closeSidebar()
+  },
   methods: {
+    closeSidebar () {
+      const sideBar = document.querySelector('.singlegrid .activeSidebar')
+      if (sideBar) {
+        alert('e')
+      }
+    },
     sidebarActive () {
       this.$store.commit('sidebarActive')
     }
@@ -65,9 +75,8 @@ export default {
   }
 }
 
-.sidebar_close {
+.sidebar-close {
   padding: 30px;
-  margin-bottom: 6rem;
   align-self: end;
 
   &::before,

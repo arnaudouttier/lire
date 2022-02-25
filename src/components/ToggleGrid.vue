@@ -37,8 +37,8 @@ export default {
   .toggle-grid {
     display: inline-block;
     position: relative;
-    width: 50px;
-    height: 25px;
+    width: 40px;
+    height: 20px;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     border-radius: 40px;
@@ -49,8 +49,8 @@ export default {
       position: absolute;
       left: -5px;
       top: 0;
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #000;
       transition: left 0.5s ease;

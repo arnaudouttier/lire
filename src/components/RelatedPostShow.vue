@@ -1,9 +1,9 @@
 <template>
   <section>
     <article class="post">
-      <div class="post_header">
-        <h3 class="post_title">{{ RelatedPost.title }}</h3>
-        <div class="post_meta">
+      <div class="post-header">
+        <h3 class="post-title">{{ RelatedPost.title }}</h3>
+        <div class="post-meta">
           <p>
             posted in <span class="meta">{{ RelatedPost.category }}</span
             >on<span class="meta">{{ RelatedPost.date }}</span> by<span
@@ -13,14 +13,14 @@
           </p>
         </div>
         <img
-          class="featured_image"
+          class="featured-image"
           v-if="RelatedPost.featured_image"
           :src="require('@/assets/images/' + RelatedPost.featured_image)"
           :alt="RelatedPost.slug"
         />
       </div>
-      <div class="post_main">
-        <div class="post_main_text">
+      <div class="post-main">
+        <div class="post-main-text">
           <p>{{ RelatedPost.content }}</p>
         </div>
       </div>

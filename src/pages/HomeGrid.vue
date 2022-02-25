@@ -1,7 +1,7 @@
 <template>
   <section
     class="home Homegrid"
-    :class="{ activerid: this.$store.state.toolerid }"
+    :class="{ activegrid: this.$store.state.toolerid }"
   >
     <Post v-for="post in posts" :key="post.id" :post="post" />
   </section>
@@ -20,10 +20,10 @@ export default {
       posts: this.$store.state.posts
     }
   },
-  updated () {
+  mounted () {
     setTimeout(() => {
       this.resizeAllMasonryItems()
-    }, 2000)
+    }, 1000)
   },
   methods: {
     resizeMasonryItem (item) {
@@ -36,7 +36,7 @@ export default {
       )
 
       const rowSpan = Math.ceil(
-        (item.querySelector('.post_content').getBoundingClientRect().height +
+        (item.querySelector('.post-content').getBoundingClientRect().height +
           rowGap) /
           (rowHeight + rowGap)
       )
@@ -54,7 +54,7 @@ export default {
 <style  lang="scss">
 @media (min-width: 768px) {
   .home {
-    &.activerid {
+    &.activegrid {
       padding: 2rem;
       max-height: 100vh;
       overflow: scroll;

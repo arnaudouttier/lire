@@ -1,6 +1,6 @@
 <template>
   <div class="social_navigation">
-    <a href="https://github.com/arnaudouttier"> gitub</a>
+    <a href="https://github.com/arnaudouttier"> Gitub</a>
     <a href="#">Frotend Mentor </a>
     <a href="https://www.frontendmentor.io/profile/arnaudouttier">Vercel </a>
     <p>{{ currentDateTime() }}</p>

@@ -99,9 +99,6 @@ export default {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .nav {
-    font-size: 2rem;
-  }
   .site-nav-mobile {
     display: none;
   }
@@ -117,7 +114,7 @@ export default {
     }
   }
 
-  .activerid {
+  .activegrid {
     nav {
       padding: 0;
       margin-bottom: 6rem;

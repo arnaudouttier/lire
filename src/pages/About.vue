@@ -1,70 +1,66 @@
 <template>
-  <main role="main" class="site-main">
-    <div id="about" class="about">
-      <section class="resume">
-        <div class="resume-header">
-          <p>
-            Titulaire d'une licence en informatique et d'un diplome dans le
-            support informatique, je me suis spécialisé dans le développement
-            Front-end.
-          </p>
-        </div>
+  <div id="about" class="about">
+    <section class="resume">
+      <div class="resume-header">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Necessitatibus ipsum exercitationem nobis magnam similique eveniet? At
-          rerum dicta quo. A nemo quod sit harum placeat laborum repellendus
-          quas aliquid natus.
+          Titulaire d'une licence en informatique et d'un diplome dans le
+          support informatique, je me suis spécialisé dans le développement
+          Front-end.
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-          voluptas repellat, sit sunt neque natus iure mollitia culpa quis
-          dolore, non, dignissimos magnam eligendi. Rerum quod tenetur, vitae
-          consequuntur, temporibus in placeat maiores, voluptatibus voluptate
-          quos adipisci. Rerum, nulla debitis?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione a qui
-          sapiente hic quam temporibus facere cumque aut minima esse, odio
-          consequuntur et nobis non ut impedit cupiditate praesentium
-          recusandae.
-        </p>
-      </section>
-      <section id="expertise" class="expertise">
-        <div class="expertise-header">
-          <h2>Expertise</h2>
-        </div>
-        <div class="expertise-list">
-          <ul>
-            <li>Création de sites internet</li>
-            <li>Gestion de sites internet</li>
-            <li>Wordpress</li>
-            <li>Intégration Html Css</li>
-            <li>Refonte de sites internet</li>
-            <li>UX/UI</li>
-            <li>Optimisation de sites</li>
-            <li>Maintenance de sites internet</li>
+      </div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus
+        ipsum exercitationem nobis magnam similique eveniet? At rerum dicta quo.
+        A nemo quod sit harum placeat laborum repellendus quas aliquid natus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptas
+        repellat, sit sunt neque natus iure mollitia culpa quis dolore, non,
+        dignissimos magnam eligendi. Rerum quod tenetur, vitae consequuntur,
+        temporibus in placeat maiores, voluptatibus voluptate quos adipisci.
+        Rerum, nulla debitis?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione a qui
+        sapiente hic quam temporibus facere cumque aut minima esse, odio
+        consequuntur et nobis non ut impedit cupiditate praesentium recusandae.
+      </p>
+    </section>
+    <section id="expertise" class="expertise">
+      <div class="expertise-header">
+        <h2>Expertise</h2>
+      </div>
+      <div class="expertise-list">
+        <ul>
+          <li>Création de sites internet</li>
+          <li>Gestion de sites internet</li>
+          <li>Wordpress</li>
+          <li>Intégration Html Css</li>
+          <li>Refonte de sites internet</li>
+          <li>UX/UI</li>
+          <li>Optimisation de sites</li>
+          <li>Maintenance de sites internet</li>
 
-            <li>Rédation de contenu web</li>
-            <li>Support informatique</li>
-            <li>Administration réseau</li>
-            <li>Javascript</li>
-            <li>VueJs</li>
-            <li>Php</li>
-            <li>BDD / Mysql</li>
-            <li>Multimédias</li>
-            <li>Figma / Photoshop</li>
-            <li>Création de template</li>
-          </ul>
-        </div>
-      </section>
-      <section id="contact" class="contact">
-        <p>
-          Vous avez une demande , n'hésitez pas à m'écrire
-          <span>arnaud.outtier@protonmail.com</span>
-        </p>
-      </section>
-    </div>
-  </main>
+          <li>Rédation de contenu web</li>
+          <li>Support informatique</li>
+          <li>Administration réseau</li>
+          <li>Javascript</li>
+          <li>VueJs</li>
+          <li>Php</li>
+          <li>BDD / Mysql</li>
+          <li>Multimédias</li>
+          <li>Figma / Photoshop</li>
+          <li>Création de template</li>
+        </ul>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <p>
+        Vous avez une demande , n'hésitez pas à m'écrire
+        <span>arnaud.outtier@protonmail.com</span>
+      </p>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -89,7 +85,7 @@ export default {
 .expertise,
 .contact {
   &:before {
-    content: '';
+    content: "";
     border-top: 2px solid;
     border-color: inherit;
     width: 50px;
@@ -103,6 +99,16 @@ export default {
   font-size: 1.4rem;
   font-weight: 700;
   margin: 6.4rem 0;
+}
+
+@media (min-width: 576px) {
+  .expertise-list {
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 32px;
+    }
+  }
 }
 
 @media (min-width: 992px) {
@@ -123,18 +129,8 @@ export default {
 .expertise {
   li {
     &:before {
-      content: '–';
+      content: "–";
       margin-right: 0.8rem;
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  .expertise-list {
-    ul {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 32px;
     }
   }
 }
@@ -148,13 +144,46 @@ export default {
     position: relative;
 
     &:after {
-      content: '';
+      content: "";
       border-bottom: 2px solid;
       border-color: inherit;
       position: absolute;
       left: 0;
       bottom: -4px;
       right: 0;
+    }
+  }
+}
+
+// GRID VERSION
+
+.site {
+  &.activegrid {
+    .about {
+      padding: 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 8rem;
+
+      .resume {
+        display: block;
+      }
+
+      .expertise {
+        &::before {
+          display: none;
+        }
+
+        .resume-header,
+        .expertise-header {
+          margin: 0 0 4rem 0 ;
+        }
+      }
+
+      .resume-header {
+        width: 100%;
+      }
     }
   }
 }
